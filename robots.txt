@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://holostudios.github.io/backofthesleeve-links/sitemap.xml
+Sitemap: https://backofthesleeve.com/sitemap.xml
