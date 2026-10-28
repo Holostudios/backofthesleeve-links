@@ -16,4 +16,5 @@ d.addEventListener("change",function(e){var a=e.target;if(a.dataset&&a.dataset.t
 d.addEventListener("submit",function(e){var f=e.target,v=f.dataset&&f.dataset.track;if(v)ev(v=="signup"?"newsletter_signup":v)},true);
 d.addEventListener("click",function(e){var p=e.target.closest&&e.target.closest(".vplayer[data-vid]");if(p&&e.target.closest(".play"))ev(p.classList.contains("docked")?"floating_player_play":"watch_click:"+p.dataset.vid)},true);
 d.addEventListener("play",function(e){if(e.target.closest&&e.target.closest("[data-track=floating_player_play],.floating-player,#floating-player,[data-floating-player]"))ev("floating_player_play",1)},true);
+d.addEventListener("click",function(e){var a=e.target.closest&&e.target.closest("a[href]");if(!a||a.dataset.track||!/^https?:/i.test(a.href))return;var h=a.hostname.replace(/^www\./,"");if(h&&h!==L.hostname.replace(/^www\./,""))ev("out:"+h)},true);
 })();
