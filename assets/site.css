@@ -135,3 +135,4 @@ html[data-layout] .cards.car{display:flex;grid-template-columns:none;overflow-x:
 @keyframes nl2glow{50%{box-shadow:0 0 28px #ff4fd8,0 0 66px #a47cffaa}}
 @media(max-width:560px){.nl2-top{flex-direction:column;align-items:flex-start}.nl2-btn{width:100%}.nl2-form input[type=email]{height:56px}}
 @media (prefers-reduced-motion:reduce){.nl2-slv .disc,.nl2-btn,.nl2:hover .nl2-slv .cov{animation:none!important}.nl2-btn,.nl2-btn svg{transition:none}}
+.aff-t{font-weight:600;color:inherit;text-decoration:underline;text-underline-offset:3px}.aff-t:hover{color:#4df5e8}
