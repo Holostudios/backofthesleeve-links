@@ -106,3 +106,32 @@ footer.ft{margin-top:70px;border-top:1px solid var(--bd);padding:34px 0 90px;col
 html[data-layout] .cards.car{display:flex;grid-template-columns:none;overflow-x:auto;scroll-snap-type:x mandatory;gap:16px;padding-bottom:14px;max-width:none;scrollbar-width:thin}html[data-layout] .cards.car .card{flex:0 0 min(84%,340px);scroll-snap-align:start;flex-direction:column}html[data-layout] .cards.car .th{width:100%;aspect-ratio:16/9;min-height:0}
 .nl .vote::before{content:"\2605  "}
 .soonbtn{margin-top:4px}
+
+/* nl2 */
+.nl2{position:relative;border-radius:24px;padding:clamp(22px,4vw,34px);background:radial-gradient(120% 90% at 0% 0%,#2a1250 0,transparent 55%),radial-gradient(90% 80% at 100% 100%,#3a0f3a 0,transparent 55%),#0d0a18;border:1px solid #ff4fd877;box-shadow:0 0 60px #ff4fd82e,0 0 120px #a47cff1f,inset 0 0 40px #a47cff14;overflow:hidden;isolation:isolate}
+.nl2::before{content:"";position:absolute;inset:0;z-index:-1;background:repeating-radial-gradient(circle at 92% 8%,#ffffff08 0 1px,transparent 2px 9px);opacity:.7;pointer-events:none}
+.nl2-top{display:flex;gap:clamp(16px,3vw,28px);align-items:center}
+.nl2-slv{position:relative;flex:none;width:112px;height:92px}
+.nl2-slv .cov{position:absolute;left:0;top:6px;width:80px;height:80px;border-radius:8px;background:linear-gradient(135deg,var(--m),var(--v));box-shadow:0 0 28px #ff4fd899;z-index:2;display:grid;place-items:center;font:800 11px var(--fu);letter-spacing:.14em;color:#fff;transform:rotate(-4deg)}
+.nl2-slv .disc{position:absolute;right:0;top:8px;width:76px;height:76px;border-radius:50%;z-index:1;background:radial-gradient(circle,#0b0a10 0 9%,var(--m) 9% 15%,transparent 15%),repeating-radial-gradient(circle,#15121f 0 2px,#262033 3px 4px);border:2px solid #3a3350;box-shadow:0 0 18px #a47cff66;animation:nl2spin 3.6s linear infinite}
+.nl2-slv .disc::after{content:"";position:absolute;inset:0;border-radius:50%;background:conic-gradient(from 20deg,transparent 0 18%,#ffffff22 22%,transparent 30% 68%,#ffffff1a 72%,transparent 80%)}
+.nl2:hover .nl2-slv .cov{animation:nl2bob 1.6s ease-in-out infinite}
+.nl2 h2{font-size:clamp(1.45rem,3.6vw,2rem);margin:6px 0 8px}.nl2 p{margin:0;color:#d9d2f5;font-size:15.5px;line-height:1.55}
+.nl2-perks{list-style:none;margin:20px 0 4px;padding:0;display:flex;flex-wrap:wrap;gap:8px}
+.nl2-perks li{display:inline-flex;align-items:center;gap:8px;padding:8px 14px 8px 11px;border-radius:999px;border:1px solid #ffffff2a;background:linear-gradient(120deg,#ff4fd81f,#a47cff1f);font:700 13px var(--fu);color:#fff;letter-spacing:.01em}
+.nl2-perks svg{width:17px;height:17px;color:var(--c);flex:none}
+.nl2-form{display:flex;gap:10px;margin:18px 0 8px;flex-wrap:wrap}
+.nl2-in{flex:1 1 260px;display:block}.nl2 .sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+.nl2-form input[type=email]{width:100%;height:58px;padding:0 22px;border-radius:999px;border:1.5px solid #a47cff;background:#07060c;color:#fff;font:600 17px var(--fu);outline:none;transition:border-color .2s,box-shadow .2s}
+.nl2-form input[type=email]::placeholder{color:#8f87b3;font-weight:500}
+.nl2-form input[type=email]:focus{border-color:var(--c);box-shadow:0 0 0 4px #4df5e822,0 0 24px #4df5e855}
+.nl2-hp{position:absolute!important;left:-9999px!important;width:1px;height:1px;opacity:0}
+.nl2-btn{flex:0 0 auto;display:inline-flex;align-items:center;justify-content:center;gap:10px;height:58px;padding:0 30px;border:0;border-radius:999px;cursor:pointer;color:#fff;font:800 16px var(--fu);letter-spacing:.01em;background:linear-gradient(100deg,#ff4fd8,#a47cff 60%,#6f8bff);background-size:160% 100%;box-shadow:0 0 18px #ff4fd8aa,0 0 44px #a47cff77;animation:nl2glow 2.8s ease-in-out infinite;transition:transform .18s cubic-bezier(.3,1.6,.5,1),background-position .4s}
+.nl2-btn svg{width:19px;height:19px;transition:transform .2s}.nl2-btn:hover{transform:translateY(-2px) scale(1.02);background-position:100% 0}.nl2-btn:hover svg{transform:translateX(4px)}.nl2-btn:active{transform:scale(.96)}.nl2-btn[disabled]{opacity:.7;cursor:progress;animation:none}
+.nl2-trust{font-size:13px!important;color:var(--mu)!important;margin:2px 0 0!important}
+.nl2-msg{margin:12px 0 0!important;padding:14px 16px;border-radius:14px;font:700 15px/1.45 var(--fu)!important}.nl2-msg[data-s=ok]{color:#d8fff9!important;background:#4df5e81c;border:1px solid #4df5e877;box-shadow:0 0 24px #4df5e833}.nl2-msg[data-s=err]{color:#ffd6f3!important;background:#ff4fd81c;border:1px solid #ff4fd877}
+.nl2 .vote{margin-top:14px;font:700 13px var(--fu);color:var(--c);letter-spacing:.02em}
+@keyframes nl2spin{to{transform:rotate(360deg)}}@keyframes nl2bob{50%{transform:rotate(-7deg) translateY(-4px)}}
+@keyframes nl2glow{50%{box-shadow:0 0 28px #ff4fd8,0 0 66px #a47cffaa}}
+@media(max-width:560px){.nl2-top{flex-direction:column;align-items:flex-start}.nl2-btn{width:100%}.nl2-form input[type=email]{height:56px}}
+@media (prefers-reduced-motion:reduce){.nl2-slv .disc,.nl2-btn,.nl2:hover .nl2-slv .cov{animation:none!important}.nl2-btn,.nl2-btn svg{transition:none}}

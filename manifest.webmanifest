@@ -1,0 +1,23 @@
+{
+ "name": "Back of the Sleeve",
+ "short_name": "BotS",
+ "description": "The true stories behind the music.",
+ "start_url": "/backofthesleeve-links/",
+ "scope": "/backofthesleeve-links/",
+ "display": "standalone",
+ "background_color": "#07060c",
+ "theme_color": "#07060c",
+ "icons": [
+  {
+   "src": "/backofthesleeve-links/assets/icons/icon-192.png",
+   "sizes": "192x192",
+   "type": "image/png"
+  },
+  {
+   "src": "/backofthesleeve-links/assets/icons/icon-512.png",
+   "sizes": "512x512",
+   "type": "image/png",
+   "purpose": "any maskable"
+  }
+ ]
+}

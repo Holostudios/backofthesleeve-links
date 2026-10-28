@@ -48,3 +48,16 @@ $$("[data-copy]").forEach(b=>b.addEventListener("click",async()=>{const u=locati
 const ac=M("bots-ads");if(ac){H.classList.add("ads-on");const s=D.createElement("script");s.async=true;s.src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client="+ac;s.crossOrigin="anonymous";addEventListener("load",()=>D.head.appendChild(s),{once:true})}
 const gc=M("bots-goat");if(gc){addEventListener("load",()=>{const s=D.createElement("script");s.async=true;s.dataset.goatcounter="https://"+gc+".goatcounter.com/count";s.src="https://gc.zgo.at/count.js";D.head.appendChild(s)},{once:true})}
 })();
+
+/* nl2: native Brevo form, inline states, no-cors fetch (double opt-in handled by Brevo); falls back to native submit + /thanks/ */
+(()=>{document.addEventListener("submit",async e=>{const f=e.target;if(!f.classList||!f.classList.contains("nl2-form"))return;e.preventDefault();
+const box=f.closest(".nl2"),msg=box.querySelector(".nl2-msg"),btn=f.querySelector("button"),lab=btn.querySelector("span"),old=lab.textContent,em=(f.EMAIL.value||"").trim();
+const say=(s,t)=>{msg.dataset.s=s;msg.textContent=t;msg.hidden=false};
+if(!/^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(em)){say("err","That email doesn't look right. Check it and try again.");f.EMAIL.focus();return}
+if(f.email_address_check.value){say("ok","You're in!");return}
+btn.disabled=true;lab.textContent="Sending...";
+try{const b=new URLSearchParams(new FormData(f));await fetch(f.action,{method:"POST",mode:"no-cors",body:b});
+f.hidden=true;box.querySelector(".nl2-trust").hidden=true;say("ok","You're almost in! Check your inbox for our confirmation email and tap confirm. Your first cut story lands this Friday.");
+try{navigator.sendBeacon&&0}catch(_){}}
+catch(err){say("err","Couldn't reach the signup. Opening the backup form...");try{f.target="_blank";f.submit()}catch(_){}setTimeout(()=>{location.href=f.dataset.thanks},900)}
+finally{btn.disabled=false;lab.textContent=old}})})();
